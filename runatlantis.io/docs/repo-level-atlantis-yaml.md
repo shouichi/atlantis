@@ -272,9 +272,9 @@ projects:
 With this config above, Atlantis runs planning/applying for project2 first, then for project1.
 Several projects can have same `execution_order_group`. Any order in one group isn't guaranteed.
 `parallel_plan` and `parallel_apply` respect these order groups, so parallel planning/applying works
-in each group one by one. 
+in each group one by one.
 
-If any plan/apply fails and `abort_on_execution_order_fail` is set to true on a repo level, all the 
+If any plan/apply fails and `abort_on_execution_order_fail` is set to true on a repo level, all the
 following groups will be aborted. For this example, if project2 fails then project1 will not run.
 
 ### Custom Backend Config
@@ -341,7 +341,7 @@ Atlantis supports this but requires the `name` key to be specified. See [Custom 
 ### Autoplan
 ```yaml
 enabled: true
-when_modified: ["*.tf", "terragrunt.hcl"]
+when_modified: ["*.tf", "terragrunt.hcl", ".terraform.lock.hcl"]
 ```
 | Key                   | Type          | Default        | Required | Description                                                                                                                                                                                                                                                       |
 |-----------------------|---------------|----------------|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
